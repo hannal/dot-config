@@ -17,7 +17,7 @@ telescope.setup({
     layout_config = {
       width = 0.5,
       height = 0.75,
-      preview_width = 0.65,
+      preview_width = 0.60,
       anchor = "SE", -- E, SE, S, SW, W, NW, W, NE, CENTER
     },
     preview = {
