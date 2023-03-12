@@ -259,4 +259,32 @@ command_center.add({
     cmd = "<CMD>Neogit<CR>",
     keys = { "n", "<leader>gg", silent_noremap },
   },
+  --
+  -- floatterm : https://github.com/voldikss/vim-floaterm
+  -- after normal mode(<C-\><C-n>), move different window
+  {
+    desc = "floating Terminal on right",
+    cmd = "<CMD>FloatermNew --height=0.9 --width=0.3 --wintype=float --name=rightterm --position=bottomright<CR>",
+    keys = { "n", "<S-t>r", silent_noremap },
+  },
+  {
+    desc = "floating Terminal on center",
+    cmd = "<CMD>FloatermNew --height=0.5 --width=0.5 --wintype=float --name=centerterm --position=auto<CR>",
+    keys = { "n", "<S-t>c", silent_noremap },
+  },
+  {
+    desc = "Send selection to terminal",
+    cmd = "<CMD>'<,'>FloatermSend ...  --height=0.5 --width=0.4 --wintype=float --name=termforselection --position=auto<CR>",
+    keys = { "n", "<S-t>tt", silent_noremap },
+  },
+  {
+    desc = "Open Terminal on right side",
+    cmd = "<CMD>FloatermNew --height=1.0 --width=0.25 --wintype=vsplit --name=rightwindow --position=botright<CR>",
+    keys = { "n", "<S-t>w", silent_noremap },
+  },
+  {
+    desc = "Open Terminal with python repl",
+    cmd = "<CMD>'<,'>FloatermSend ...  --height=0.85 --width=0.25 --wintype=float --name=pyrepl --position=auto<CR>",
+    keys = { "n", "<S-t>tp", silent_noremap },
+  },
 })
