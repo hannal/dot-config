@@ -1,0 +1,53 @@
+# To use:
+# 1) Node version specified in package.json, in .envrc add:
+#      use nvm package.json
+#    This requires that package.json contains something like
+#      "engines": {
+#        "node": ">=6.9.2"
+#      },
+#
+# 2) Node version specified in .envrc add:
+#      use nvm 6.9.2
+#
+# 3) Node version specified in .nvmrc, in .envrc add:
+#      use nvm
+use_nvm() {
+  local node_version=$1
+
+  if [[ $node_version = "package.json" ]]; then
+    if has jq; then
+      node_version=$(jq --raw-output .engines.node package.json | tr -d "<=> ")
+    else
+      echo "Parsing package.json for node version to use with direnv requires jq"
+    fi
+  fi
+
+  nvm_sh=/opt/homebrew/opt/nvm/nvm.sh
+  if [[ -e $nvm_sh ]]; then
+    source $nvm_sh
+    nvm use $node_version
+  fi
+}
+
+use_python() {
+    if [ -n "$(which pyenv)" ]; then
+        local pyversion=$1
+        pyenv local ${pyversion}
+    fi
+}
+
+layout_virtualenv() {
+    local pyversion=$1
+    local pvenv=$2
+    if [ -n "$(which pyenv-virtualenv)" ]; then
+        pyenv virtualenv --force --quiet ${pyversion} ${pvenv}-${pyversion}
+    fi
+    pyenv local --unset
+}
+
+layout_activate() {
+    if [ -n "$(which pyenv)" ]; then
+        source $PYENV_ROOT/versions/$1/bin/activate
+    fi
+}
+
