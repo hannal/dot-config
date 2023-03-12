@@ -225,12 +225,12 @@ command_center.add({
   {
     desc = "Run nearest test",
     cmd = "<CMD>lua require('neotest').run.run()<CR>",
-    keys = { "n", "<leader>tl", silent_noremap },
+    keys = { "n", "<leader>tn", silent_noremap },
   },
   {
     desc = "Run nearest test with Debugger",
     cmd = "<CMD>lua require('neotest').run.run({ strategy = 'dap' })<CR>",
-    keys = { "n", "<leader>tL", silent_noremap },
+    keys = { "n", "<leader>tN", silent_noremap },
   },
   {
     desc = "Show test output",
