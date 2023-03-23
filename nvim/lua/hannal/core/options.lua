@@ -1,6 +1,7 @@
 local opt = vim.opt -- for conciseness
 
 vim.g.python3_host_prog = "~/.pyenv/versions/py4nvim/bin/python"
+vim.g.markdown_folding = 0
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers

@@ -14,9 +14,9 @@ bufferline.setup({
       reveal = { "close" },
     },
     indicator = {
-      -- icon = "▎", -- this should be omitted if indicator style is not 'icon'
+      icon = "▎", -- this should be omitted if indicator style is not 'icon'
       -- style = "icon" | "underline" | "none",
-      style = "underline",
+      style = "icon",
     },
     diagnostics = "nvim_lsp",
     color_icons = true,

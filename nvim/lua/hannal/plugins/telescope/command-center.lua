@@ -109,7 +109,7 @@ command_center.add({
   -- lsp
   {
     desc = "Show function signaure (hover)",
-    cmd = "<CMD>Lspsaga hover_doc<CR>",
+    cmd = "<CMD>lua contextual_K()<CR>",
     keys = {
       { "n", "K", silent_noremap },
       { "i", "<C-k>", silent_noremap },
@@ -282,6 +282,13 @@ command_center.add({
     cmd = "<CMD>FloatermNew --height=1.0 --width=0.25 --wintype=vsplit --name=rightwindow --position=botright<CR>",
     keys = { "n", "<S-t>w", silent_noremap },
   },
+  {
+    desc = "Open Terminal with python repl",
+    cmd = "<CMD>'<,'>FloatermSend ...  --height=0.85 --width=0.25 --wintype=float --name=pyrepl --position=auto<CR>",
+    keys = { "n", "<S-t>tp", silent_noremap },
+  },
+  --
+  -- fold-preview : https://github.com/anuvyklack/fold-preview.nvim
   {
     desc = "Open Terminal with python repl",
     cmd = "<CMD>'<,'>FloatermSend ...  --height=0.85 --width=0.25 --wintype=float --name=pyrepl --position=auto<CR>",

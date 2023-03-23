@@ -164,6 +164,10 @@ return packer.startup(function(use)
   -- https://github.com/voldikss/vim-floaterm
   use("voldikss/vim-floaterm")
 
+  -- fold-preview
+  use({ "anuvyklack/fold-preview.nvim", requires = "anuvyklack/keymap-amend.nvim" })
+  use({ "anuvyklack/pretty-fold.nvim" })
+
   if packer_bootstrap then
     require("packer").sync()
   end

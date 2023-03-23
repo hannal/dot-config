@@ -64,7 +64,7 @@ keymap.set("n", "<leader>ee", ":NvimTreeFocus<CR>") -- toggle file explorer
 -- keymap.set("n", "<leader>fqf", "<cmd>Telescope quickfix<cr>")
 -- keymap.set("n", "<leader>jl", "<cmd>Telescope jumplist<cr>")
 -- keymap.set("n", "<leader>fhh", "<cmd>Telescope help_tags<cr>")
-keymap.set("n", "<S-p>", "<cmd>Telescope command_center<cr>") -- shift - p
+keymap.set("n", "<C-p>p", "<cmd>Telescope command_center<cr>")
 
 -- telescope git commands
 -- moved into command-center.lua

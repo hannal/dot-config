@@ -33,7 +33,7 @@ saga.setup({
     },
   },
   callhierarchy = {
-    show_detail = false,
+    show_detail = true,
     keys = {
       edit = "e",
       vsplit = "v",
@@ -70,7 +70,7 @@ saga.setup({
     win_position = "right",
     win_with = "lspsaga-outline-panel",
     win_width = 36,
-    show_detail = true,
+    show_detail = false,
     auto_preview = true,
     auto_refresh = true,
     auto_close = true,

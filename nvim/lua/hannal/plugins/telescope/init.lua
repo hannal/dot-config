@@ -15,7 +15,7 @@ telescope.setup({
     path_display = { shorten = { len = 3, exclude = { -3, -2, -1 } } }, -- hidden, tail, absolute, smart, shortten, truncate
     winblend = 1,
     layout_config = {
-      width = 0.5,
+      width = 0.70,
       height = 0.75,
       preview_width = 0.60,
       anchor = "SE", -- E, SE, S, SW, W, NW, W, NE, CENTER

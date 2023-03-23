@@ -1,8 +1,5 @@
-function is_vscode()
-  return vim.g.vscode
-end
-
 -- ref : https://github.com/josean-dev/dev-environment-files
+require("hannal.core.utils")
 require("hannal.core.options")
 require("hannal.core.keymaps")
 if not is_vscode() then
@@ -31,4 +28,5 @@ if not is_vscode() then
   require("hannal.plugins.scope")
   require("hannal.plugins.bufferline")
   require("hannal.plugins.copilot")
+  require("hannal.plugins.fold-preview")
 end

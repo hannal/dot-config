@@ -181,6 +181,18 @@ lspconfig["tsserver"].setup({
   on_attach = on_attach,
 })
 
+-- graphql
+lspconfig["graphql"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- eslint
+lspconfig["eslint"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- rust
 lspconfig["rust_analyzer"].setup({
   capabilities = capabilities,
