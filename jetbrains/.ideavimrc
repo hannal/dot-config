@@ -1,1 +1,146 @@
-/Users/hannal/.ideavimrc
+" https://github.com/JetBrains/ideavim
+" https://github.com/JetBrains/ideavim/wiki/set-commands
+" https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins
+" https://github.com/sdaschner/dotfiles/blob/master/.ideavimrc
+" https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+
+set number relativenumber
+set incsearch
+set idearefactormode=keep
+
+set ideajoin
+set ideaput
+set surround
+set easymotion
+set NERDTree
+set highlightedyank
+set textobj-entire
+
+
+let mapleader = " "
+let g:argtextobj_pairs="[:],(:),<:>"
+set clipboard=unnamedplus
+set iskeyword=-
+
+noremap <Esc> <nop>
+vmap <Esc> v<CR>
+
+map <leader>nn :action $SelectAll<CR>
+
+" run
+map <leader>tl <Action>(Run)
+map <leader>td <Action>(Rerun)
+map <leader>tn <Action>(RunClass)
+map <leader>tf <Action>(RerunFailedTests)
+
+" ui
+nmap <leader>eo :NERDTreeToggle<CR>
+nmap <leader>ee <Action>(ActivateProjectToolWindow)<CR>
+nmap <leader>lo <Action>(ActivateStructureToolWindow)<CR>
+nmap <leader>ldw <Action>(ActivateProblemsViewToolWindow)<CR>
+nmap <leader>bml <Action>(ActivateBookmarksToolWindow)<CR>
+map <C-h> <Action>(PrevSplitter)<CR>
+map <C-l> <Action>(NextSplitter)<CR>
+map <C-]> <Action>(NextTab)<CR>
+map <C-[> <Action>(PreviousTab)<CR>
+nmap <leader>sm <Action>(MaximizeEditorInSplit)<CR>
+map <C-w>o <Action>(OpenEditorInOppositeTabGroup)<CR>
+
+" refactor
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>rm <Action>(Move)
+nmap <leader>qfqf <Action>(ProblemsView.QuickFixes)<CR>
+
+" diagnosis
+nnoremap zgzg gD
+inoremap <M-CR> <Action>(EditorCompleteStatement)
+map <M-.> <Action>(ShowIntentionActions)
+map <M-,> <Action>(ShowContextAction)
+map <S-k> <Action>(QuickJavaDoc)
+
+" navigation
+map \b <Action>(ToggleLineBreakpoint)
+map <leader>fs <Action>(FindInPath)
+map <leader>fg <Action>(GotoFile)
+map <leader>ff <Action>(SearchEverywhere)
+nmap <leader>fc <Action>(FindUsages)
+nmap <leader>fr <Action>(RecentFiles)
+
+" git
+nmap <leader>git <Action>(ActivateVersionControlToolWindow)<CR>
+nmap <leader>gci <Action>(CheckinProject)<CR>
+nmap <leader>gdf <Action>(Compare.SameVersion)<CR>
+nmap <leader>gbl <Action>(Git.Branches)<CR>
+
+" editting
+nmap \ft <Action>(ReformatCode)<CR>
+nmap \fw <Action>(FileWatcher.runForFiles)<CR>
+vmap gcc <Action>(CommentByLineComment)<CR>
+nmap gcc <Action>(CommentByLineComment)<CR>
+nmap zf <Action>(ExpandCollapseToggleAction)
+nmap zR <Action>(ExpandAllRegions)
+nmap zM <Action>(CollapseAllRegions)
+nmap zG <Action>(FoldingGroup)
+
+" bookmark
+nmap <leader>bmv <Action>(ShowBookmarks)<CR>
+nmap <leader>bmm <Action>(ToggleBookmark)<CR>
+nmap <leader>bb1 <Action>(GotoBookmark1)<CR>
+nmap <leader>bm1 <Action>(ToggleBookmark1)<CR>
+nmap <leader>bb2 <Action>(GotoBookmark2)<CR>
+nmap <leader>bm2 <Action>(ToggleBookmark2)<CR>
+nmap <leader>bb3 <Action>(GotoBookmark3)<CR>
+nmap <leader>bm3 <Action>(ToggleBookmark3)<CR>
+nmap <leader>bb4 <Action>(GotoBookmark4)<CR>
+nmap <leader>bm4 <Action>(ToggleBookmark4)<CR>
+nmap <leader>bb5 <Action>(GotoBookmark5)<CR>
+nmap <leader>bm5 <Action>(ToggleBookmark5)<CR>
+nmap <leader>bba <Action>(GotoBookmarkA)<CR>
+nmap <leader>bma <Action>(ToggleBookmarkA)<CR>
+nmap <leader>bbs <Action>(GotoBookmarkS)<CR>
+nmap <leader>bms <Action>(ToggleBookmarkS)<CR>
+nmap <leader>bbd <Action>(GotoBookmarkD)<CR>
+nmap <leader>bmd <Action>(ToggleBookmarkD)<CR>
+nmap <leader>bbf <Action>(GotoBookmarkF)<CR>
+nmap <leader>bmf <Action>(ToggleBookmarkF)<CR>
+nmap <leader>bbq <Action>(GotoBookmarkQ)<CR>
+nmap <leader>bmq <Action>(ToggleBookmarkQ)<CR>
+nmap <leader>bbw <Action>(GotoBookmarkW)<CR>
+nmap <leader>bmw <Action>(ToggleBookmarkW)<CR>
+nmap <leader>bbe <Action>(GotoBookmarkE)<CR>
+nmap <leader>bme <Action>(ToggleBookmarkE)<CR>
+nmap <leader>bbr <Action>(GotoBookmarkR)<CR>
+nmap <leader>bmr <Action>(ToggleBookmarkR)<CR>
+nmap <leader>bbj <Action>(GotoBookmarkJ)<CR>
+nmap <leader>bmj <Action>(ToggleBookmarkJ)<CR>
+nmap <leader>bbk <Action>(GotoBookmarkK)<CR>
+nmap <leader>bmk <Action>(ToggleBookmarkK)<CR>
+nmap <leader>bbl <Action>(GotoBookmarkL)<CR>
+nmap <leader>bml <Action>(ToggleBookmarkL)<CR>
+nmap <leader>bbu <Action>(GotoBookmarkU)<CR>
+nmap <leader>bmu <Action>(ToggleBookmarkU)<CR>
+nmap <leader>bbi <Action>(GotoBookmarkI)<CR>
+nmap <leader>bmi <Action>(ToggleBookmarkI)<CR>
+nmap <leader>bbo <Action>(GotoBookmarkO)<CR>
+nmap <leader>bmo <Action>(ToggleBookmarkO)<CR>
+
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
+
+if has('ide')
+  if &ide =~? 'intellij idea'
+    " ...
+  elseif &ide =~? 'pycharm'
+    " prev class or def
+    nnoremap [[ ?^class\\s\\\|^\\s*\\(async\\s*\\)\\?def\\s\\\|^export\\s*function\\s\\\|^function\\s\\\|\\(public\\\|private\\\|protected\\)\\s*<CR>
+    nnoremap [c ?^class\\s<CR>
+    " next class or def
+    nnoremap ]] /^class\\s\\\|^\\s*\\(async\\s*\\)\\?def\\s\\\|^export\\s*function\\s\\\|^function\\s\\\|\\(public\\\|private\\\|protected\\)\\s*<CR>
+    nnoremap ]c /^class\\s<CR>
+  endif
+endif

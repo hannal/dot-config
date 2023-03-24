@@ -1,1 +1,51 @@
-/Users/hannal/Library/Application Support/JetBrains/PyCharm2022.3/keymaps/hannal.xml
+<keymap version="1" name="hannal" parent="Mac OS X">
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl alt t" second-keystroke="o" />
+  </action>
+  <action id="ChooseRunConfiguration">
+    <keyboard-shortcut first-keystroke="ctrl meta r" second-keystroke="ctrl meta o" />
+  </action>
+  <action id="GotoTest">
+    <keyboard-shortcut first-keystroke="shift meta t" />
+    <keyboard-shortcut first-keystroke="ctrl meta t" second-keystroke="ctrl meta t" />
+  </action>
+  <action id="ImportTests">
+    <keyboard-shortcut first-keystroke="ctrl meta t" second-keystroke="ctrl meta h" />
+  </action>
+  <action id="MaximizeEditorInSplit">
+    <keyboard-shortcut first-keystroke="ctrl alt i" second-keystroke="ctrl alt i" />
+  </action>
+  <action id="Rerun">
+    <keyboard-shortcut first-keystroke="ctrl meta r" second-keystroke="ctrl meta b" />
+  </action>
+  <action id="RerunFailedTests">
+    <keyboard-shortcut first-keystroke="ctrl meta r" second-keystroke="ctrl meta f" />
+  </action>
+  <action id="RerunTests">
+    <keyboard-shortcut first-keystroke="ctrl meta r" second-keystroke="ctrl meta l" />
+  </action>
+  <action id="Terminal.MoveToolWindowTabLeft">
+    <keyboard-shortcut first-keystroke="ctrl alt t" second-keystroke="open_bracket" />
+  </action>
+  <action id="Terminal.MoveToolWindowTabRight">
+    <keyboard-shortcut first-keystroke="ctrl alt t" second-keystroke="close_bracket" />
+  </action>
+  <action id="Terminal.NextSplitter">
+    <keyboard-shortcut first-keystroke="ctrl alt t" second-keystroke="k" />
+  </action>
+  <action id="Terminal.OpenInTerminal">
+    <keyboard-shortcut first-keystroke="ctrl alt t" second-keystroke="n" />
+  </action>
+  <action id="Terminal.PrevSplitter">
+    <keyboard-shortcut first-keystroke="ctrl alt t" second-keystroke="j" />
+  </action>
+  <action id="Terminal.SplitHorizontally">
+    <keyboard-shortcut first-keystroke="ctrl alt t" second-keystroke="minus" />
+  </action>
+  <action id="Terminal.SplitVertically">
+    <keyboard-shortcut first-keystroke="ctrl alt t" second-keystroke="shift back_slash" />
+  </action>
+  <action id="UsageView.Rerun">
+    <keyboard-shortcut first-keystroke="ctrl meta r" second-keystroke="ctrl meta r" />
+  </action>
+</keymap>
