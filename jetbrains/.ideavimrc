@@ -20,7 +20,6 @@ set textobj-entire
 let mapleader = " "
 let g:argtextobj_pairs="[:],(:),<:>"
 set clipboard=unnamedplus
-set iskeyword=-
 
 noremap <Esc> <nop>
 vmap <Esc> v<CR>
@@ -41,8 +40,8 @@ nmap <leader>ldw <Action>(ActivateProblemsViewToolWindow)<CR>
 nmap <leader>bml <Action>(ActivateBookmarksToolWindow)<CR>
 map <C-h> <Action>(PrevSplitter)<CR>
 map <C-l> <Action>(NextSplitter)<CR>
-map <C-]> <Action>(NextTab)<CR>
-map <C-[> <Action>(PreviousTab)<CR>
+map ]t <Action>(NextTab)<CR>
+map [t <Action>(PreviousTab)<CR>
 nmap <leader>sm <Action>(MaximizeEditorInSplit)<CR>
 map <C-w>o <Action>(OpenEditorInOppositeTabGroup)<CR>
 

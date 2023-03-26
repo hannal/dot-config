@@ -45,6 +45,8 @@ keymap.set(
 )
 keymap.set("n", "[c", "?^class\\s<CR>")
 keymap.set("n", "]c", "/^class\\s<CR>")
+keymap.set("n", "]t", "<cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>")
+keymap.set("n", "[t", "<cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>")
 
 -- search
 keymap.set("n", "<leader>ff", "<cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
