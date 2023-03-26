@@ -12,11 +12,6 @@ command_center.add({
   -- vim
   -- https://vim.fandom.com/wiki/Using_marks
   {
-    desc = "Set current to center",
-    cmd = "zz",
-    keys = { "n", "zz", noremap },
-  },
-  {
     desc = "Bookmark as 'A' ('M' + letter)",
     cmd = "<CMD>mark a<CR>",
     keys = { "n", "ma", noremap },
@@ -30,6 +25,51 @@ command_center.add({
     desc = "Jump to the beginning of Bookmark 'A' (' + letter)",
     cmd = "'a",
     keys = { "n", "'a", noremap },
+  },
+  {
+    desc = "Move to next tab",
+    cmd = ":tabn<CR>",
+    keys = { "n", "]t", noremap },
+  },
+  {
+    desc = "Move to previous tab",
+    cmd = ":tabp<CR>",
+    keys = { "n", "[t", noremap },
+  },
+  {
+    desc = "",
+    cmd = "v<CR>",
+    keys = { "v", "<Esc>", noremap },
+  },
+  {
+    desc = "nop",
+    cmd = "<nop>",
+    keys = { "n", "<Esc>", noremap },
+  },
+  {
+    desc = "Set current to center",
+    cmd = "zz",
+    keys = { "n", "zz", noremap },
+  },
+  {
+    desc = "Go to defination of word under cursor (forward)",
+    cmd = "/^class\\s\\|^\\s*\\(async\\s*\\)\\?\\s*def\\s\\|^export\\s*function\\s\\|^function\\s\\|\\(public\\|private\\|protected\\)\\s*<CR>",
+    keys = { { "n", "]]", silent_noremap }, { "v", "]]", silent_noremap } },
+  },
+  {
+    desc = "Go to defination of word under cursor (backward)",
+    cmd = "?^class\\s\\|^\\s*\\(async\\s*\\)\\?\\s*def\\s\\|^export\\s*function\\s\\|^function\\s\\|\\(public\\|private\\|protected\\)\\s*<CR>",
+    keys = { { "n", "[[", silent_noremap }, { "v", "[[", silent_noremap } },
+  },
+  {
+    desc = "Go to class defination of word under cursor (forward)",
+    cmd = "/^class\\s<CR>",
+    keys = { "n", "]c", noremap },
+  },
+  {
+    desc = "Go to class defination of word under cursor (backward)",
+    cmd = "/^class\\s<CR>",
+    keys = { "n", "[c", noremap },
   },
   --
   -- telescope

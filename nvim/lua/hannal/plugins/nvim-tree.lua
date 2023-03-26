@@ -72,7 +72,7 @@ nvimtree.setup({
     },
   },
   update_cwd = true,
-  update_focused_file = { enable = true, update_cwd = true, ignore_list = {} },
+  update_focused_file = { enable = true, update_cwd = false, ignore_list = {} },
   view = {
     width = 48,
   },

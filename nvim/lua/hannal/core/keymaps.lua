@@ -33,12 +33,23 @@ keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 keymap.set("n", "<C-w>n", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<C-w>c", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<C-w>]", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<C-w>[", ":tabp<CR>") --  go to previous tab
+-- keymap.set("n", "]t", ":tabn<CR>") --  go to next tab
+-- keymap.set("n", "[t", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<C-w>l", ":tabs<CR>") --  tab list
 
 -- jump
 -- keymap.set("n", "<leader>jl", ":jumps<CR>") --  print the jump list
+
+-- keymap.set(
+--   "n",
+--   "[[",
+--   "?^class\\s\\|^\\s*\\(async\\s*\\)\\?*def\\s\\|^export\\s*function\\s\\|^function\\s\\|\\(public\\|private\\|protected\\)\\s*<CR>"
+-- )
+-- keymap.set(
+--   "n",
+--   "]]",
+--   "/^class\\s\\|^\\s*\\(async\\s*\\)\\?*def\\s\\|^export\\s*function\\s\\|^function\\s\\|\\(public\\|private\\|protected\\)\\s*<CR>"
+-- )
 
 ----------------------
 -- Plugin Keybinds
