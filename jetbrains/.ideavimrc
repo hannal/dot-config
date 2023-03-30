@@ -64,6 +64,10 @@ map <leader>fg <Action>(GotoFile)
 map <leader>ff <Action>(SearchEverywhere)
 nmap <leader>fc <Action>(FindUsages)
 nmap <leader>fr <Action>(RecentFiles)
+nmap <C-e>k <Action>(GotoPreviousError)
+nmap <C-e>j <Action>(GotoNextError)
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
 
 " git
 nmap <leader>git <Action>(ActivateVersionControlToolWindow)<CR>
