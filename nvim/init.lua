@@ -1,6 +1,6 @@
 -- ref : https://github.com/josean-dev/dev-environment-files
+require("hannal.core.utils")
 if not is_vscode() then
-  require("hannal.core.utils")
   require("hannal.core.options")
   require("hannal.core.keymaps")
   require("hannal.plugins-setup")
