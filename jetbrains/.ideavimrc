@@ -40,15 +40,15 @@ nmap <leader>ldw <Action>(ActivateProblemsViewToolWindow)<CR>
 nmap <leader>bml <Action>(ActivateBookmarksToolWindow)<CR>
 map <C-h> <Action>(PrevSplitter)<CR>
 map <C-l> <Action>(NextSplitter)<CR>
-map ]t <Action>(NextTab)<CR>
-map [t <Action>(PreviousTab)<CR>
+map ]t <Action>(NextTab)
+map [t <Action>(PreviousTab)
 nmap <leader>sm <Action>(MaximizeEditorInSplit)<CR>
 map <C-w>o <Action>(OpenEditorInOppositeTabGroup)<CR>
 
 " refactor
 nmap <leader>rn <Action>(RenameElement)
 nmap <leader>rm <Action>(Move)
-nmap <leader>qfqf <Action>(ProblemsView.QuickFixes)<CR>
+nmap <leader>qfqf <Action>(ProblemsView.QuickFixes)
 
 " diagnosis
 nnoremap zgzg gD
@@ -57,8 +57,12 @@ map <M-.> <Action>(ShowIntentionActions)
 map <M-,> <Action>(ShowContextAction)
 map <S-k> <Action>(QuickJavaDoc)
 
+" debugger
+map \bb <Action>(ToggleLineBreakpoint)
+map \bx <Action>(Debugger.RemoveAllBreakpoints)
+map \bc <Action>(Debugger.RemoveAllBreakpointsInFile)
+
 " navigation
-map \b <Action>(ToggleLineBreakpoint)
 map <leader>fs <Action>(FindInPath)
 map <leader>fg <Action>(GotoFile)
 map <leader>ff <Action>(SearchEverywhere)
@@ -78,8 +82,8 @@ nmap <leader>gbl <Action>(Git.Branches)<CR>
 " editting
 nmap \ft <Action>(ReformatCode)<CR>
 nmap \fw <Action>(FileWatcher.runForFiles)<CR>
-vmap gcc <Action>(CommentByLineComment)<CR>
-nmap gcc <Action>(CommentByLineComment)<CR>
+vmap gcc <Action>(CommentByLineComment)
+nmap gcc <Action>(CommentByLineComment)
 nmap zf <Action>(ExpandCollapseToggleAction)
 nmap zR <Action>(ExpandAllRegions)
 nmap zM <Action>(CollapseAllRegions)
