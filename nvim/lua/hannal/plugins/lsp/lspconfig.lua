@@ -199,6 +199,16 @@ lspconfig["rust_analyzer"].setup({
   on_attach = on_attach,
 })
 
+-- c++
+lspconfig["ccls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+lspconfig["clangd"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- dart & flutter
 -- lspconfig["dartls"].setup({
 --   capabilities = capabilities,
