@@ -21,8 +21,8 @@ let mapleader = " "
 let g:argtextobj_pairs="[:],(:),<:>"
 set clipboard=unnamedplus
 
-noremap <Esc> <nop>
-vmap <Esc> v<CR>
+" noremap <Esc> <nop>
+map <Esc> <C-[>
 
 map <leader>nn :action $SelectAll<CR>
 
@@ -61,6 +61,11 @@ map <S-k> <Action>(QuickJavaDoc)
 map \bb <Action>(ToggleLineBreakpoint)
 map \bx <Action>(Debugger.RemoveAllBreakpoints)
 map \bc <Action>(Debugger.RemoveAllBreakpointsInFile)
+map <C-d><C-j> <Action>(StepInto)
+map <C-d><C-k> <Action>(StepOut)
+map <C-d><C-l> <Action>(StepOver)
+map <C-d><C-d> <Action>(Resume)
+map <C-d>x <Action>(Stop)
 
 " navigation
 map <leader>fs <Action>(FindInPath)
