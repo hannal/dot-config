@@ -13,7 +13,11 @@ map <Space>nh :nohl
 exmap toggleleftsidebar obcommand app:toggle-left-sidebar
 nmap <Space>eo :toggleleftsidebar
 
-exmap focusleftsidebar obcommand file-explorer:reveal-active-file
+exmap togglerightsidebar obcommand app:toggle-right-sidebar
+nmap <Space>ts :togglerightsidebar
+
+" exmap focusleftsidebar obcommand file-tree-alternative:open-file-tree-view
+exmap focusleftsidebar obcommand file-tree-alternative:reveal-active-file
 nmap <Space>ee :focusleftsidebar
 
 exmap back obcommand app:go-back
@@ -48,6 +52,17 @@ exmap prevHeading jsfile mdHelpers.js {jumpHeading(false)}
 nmap ]] :nextHeading
 nmap [[ :prevHeading
 
+exmap nexttab obcommand workspace:next-tab
+map ]t :nexttab
+
+exmap prevtab obcommand workspace:previous-tab
+map [t :prevtab
+
+exmap quickadd obcommand quickadd:runQuickAdd
+map <Space>qn :quickadd
+
+exmap fllowlink obcommand editor:follow-link
+map zgzg :fllowlink
 
 """ obcommand list
 "
@@ -84,119 +99,6 @@ nmap [[ :prevHeading
 " workspace:goto-last-tab
 " workspace:previous-tab
 " workspace:new-tab
-" app:go-back
-" app:go-forward
-" app:open-vault
-" theme:use-dark
-" theme:use-light
-" theme:switch
-" app:open-settings
-" app:show-release-notes
-" markdown:toggle-preview
-" workspace:close
-" workspace:close-window
-" workspace:close-others
-" workspace:close-tab-group
-" workspace:close-others-tab-group
-" app:delete-file
-" app:toggle-left-sidebar
-" app:toggle-right-sidebar
-" app:toggle-default-new-pane-mode
-" app:open-help
-" app:reload
-" app:show-debug-info
-" app:open-sandbox-vault
-" window:toggle-always-on-top
-" window:zoom-in
-" window:zoom-out
-" window:reset-zoom
-" file-explorer:new-file
-" file-explorer:new-file-in-current-tab
-" file-explorer:new-file-in-new-pane
-" open-with-default-app:open
-" file-explorer:move-file
-" file-explorer:duplicate-file
-" open-with-default-app:show
-" editor:open-search
-" editor:open-search-replace
-" editor:focus
-" editor:toggle-fold
-" editor:fold-all
-" editor:unfold-all
-" editor:fold-less
-" editor:fold-more
-" editor:insert-wikilink
-" editor:insert-embed
-" editor:insert-link
-" editor:insert-tag
-" editor:set-heading
-" editor:set-heading-0
-" editor:set-heading-1
-" editor:set-heading-2
-" editor:set-heading-3
-" editor:set-heading-4
-" editor:set-heading-5
-" editor:set-heading-6
-" editor:toggle-bold
-" editor:toggle-italics
-" editor:toggle-strikethrough
-" editor:toggle-highlight
-" editor:toggle-code
-" editor:toggle-blockquote
-" editor:toggle-comments
-" editor:toggle-bullet-list
-" editor:toggle-numbered-list
-" editor:toggle-checklist-status
-" editor:cycle-list-checklist
-" editor:insert-callout
-" editor:swap-line-up
-" editor:swap-line-down
-" editor:attach-file
-" editor:delete-paragraph
-" editor:toggle-spellcheck
-" editor:context-menu
-" file-explorer:open
-" file-explorer:reveal-active-file
-" global-search:open
-" switcher:open
-" graph:open
-" graph:open-local
-" graph:animate
-" backlink:open
-" backlink:open-backlinks
-" backlink:toggle-backlinks-in-document
-" canvas:new-file
-" canvas:export-as-image
-" canvas:jump-to-group
-" canvas:convert-to-file
-" outgoing-links:open
-" outgoing-links:open-for-current
-" tag-pane:open
-" daily-notes
-" daily-notes:goto-prev
-" daily-notes:goto-next
-" insert-template
-" insert-current-date
-" insert-current-time
-" note-composer:merge-file
-" note-composer:split-file
-" note-composer:extract-heading
-" command-palette:open
-" bookmarks:open
-" bookmarks:bookmark-current-view
-" bookmarks:bookmark-current-search
-" bookmarks:unbookmark-current-view
-" bookmarks:bookmark-current-section
-" bookmarks:bookmark-current-heading
-" bookmarks:bookmark-all-tabs
-" markdown-importer:open
-" zk-prefixer
-" outline:open
-" outline:open-for-current
-" audio-recorder:start
-" audio-recorder:stop
-" file-recovery:open
-" editor:toggle-source
 " obsidian-excalidraw-plugin:excalidraw-disable-autosave
 " obsidian-excalidraw-plugin:excalidraw-enable-autosave
 " obsidian-excalidraw-plugin:excalidraw-download-lib
@@ -285,7 +187,6 @@ nmap [[ :prevHeading
 " quickadd:runQuickAdd
 " quickadd:reloadQuickAdd
 " quickadd:testQuickAdd
-" quickadd:choice:bdf6d02a-b2d7-447e-ac54-841bc84a239d
 " obsidian-pandoc:pandoc-export-asciidoc
 " obsidian-pandoc:pandoc-export-docx
 " obsidian-pandoc:pandoc-export-markdown
@@ -300,3 +201,119 @@ nmap [[ :prevHeading
 " obsidian-pandoc:pandoc-export-rst
 " obsidian-pandoc:pandoc-export-dokuwiki
 " obsidian-pandoc:pandoc-export-mediawiki
+" app:go-back
+" app:go-forward
+" app:open-vault
+" theme:use-dark
+" theme:use-light
+" theme:switch
+" app:open-settings
+" app:show-release-notes
+" markdown:toggle-preview
+" workspace:close
+" workspace:close-window
+" workspace:close-others
+" workspace:close-tab-group
+" workspace:close-others-tab-group
+" app:delete-file
+" app:toggle-left-sidebar
+" app:toggle-right-sidebar
+" app:toggle-default-new-pane-mode
+" app:open-help
+" app:reload
+" app:show-debug-info
+" app:open-sandbox-vault
+" window:toggle-always-on-top
+" window:zoom-in
+" window:zoom-out
+" window:reset-zoom
+" file-explorer:new-file
+" file-explorer:new-file-in-current-tab
+" file-explorer:new-file-in-new-pane
+" open-with-default-app:open
+" file-explorer:move-file
+" file-explorer:duplicate-file
+" open-with-default-app:show
+" editor:open-search
+" editor:open-search-replace
+" editor:focus
+" editor:toggle-fold
+" editor:fold-all
+" editor:unfold-all
+" editor:fold-less
+" editor:fold-more
+" editor:insert-wikilink
+" editor:insert-embed
+" editor:insert-link
+" editor:insert-tag
+" editor:set-heading
+" editor:set-heading-0
+" editor:set-heading-1
+" editor:set-heading-2
+" editor:set-heading-3
+" editor:set-heading-4
+" editor:set-heading-5
+" editor:set-heading-6
+" editor:toggle-bold
+" editor:toggle-italics
+" editor:toggle-strikethrough
+" editor:toggle-highlight
+" editor:toggle-code
+" editor:toggle-blockquote
+" editor:toggle-comments
+" editor:toggle-bullet-list
+" editor:toggle-numbered-list
+" editor:toggle-checklist-status
+" editor:cycle-list-checklist
+" editor:insert-callout
+" editor:swap-line-up
+" editor:swap-line-down
+" editor:attach-file
+" editor:delete-paragraph
+" editor:toggle-spellcheck
+" editor:context-menu
+" file-explorer:open
+" file-explorer:reveal-active-file
+" global-search:open
+" switcher:open
+" graph:open
+" graph:open-local
+" graph:animate
+" canvas:new-file
+" canvas:export-as-image
+" canvas:jump-to-group
+" canvas:convert-to-file
+" tag-pane:open
+" daily-notes
+" daily-notes:goto-prev
+" daily-notes:goto-next
+" insert-template
+" insert-current-date
+" insert-current-time
+" note-composer:merge-file
+" note-composer:split-file
+" note-composer:extract-heading
+" command-palette:open
+" bookmarks:open
+" bookmarks:bookmark-current-view
+" bookmarks:bookmark-current-search
+" bookmarks:unbookmark-current-view
+" bookmarks:bookmark-current-section
+" bookmarks:bookmark-current-heading
+" bookmarks:bookmark-all-tabs
+" markdown-importer:open
+" zk-prefixer
+" outline:open
+" outline:open-for-current
+" audio-recorder:start
+" audio-recorder:stop
+" file-recovery:open
+" editor:toggle-source
+" file-tree-alternative:open-file-tree-view
+" file-tree-alternative:reveal-active-file
+" file-tree-alternative: create-new-note
+" outgoing-links:open
+" outgoing-links:open-for-current
+" backlink:open
+" backlink:open-backlinks
+" backlink:toggle-backlinks-in-document
