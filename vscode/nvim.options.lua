@@ -50,6 +50,7 @@ keymap.set("n", "[t", "<cmd>call VSCodeNotify('workbench.action.previousEditor')
 
 -- search
 keymap.set("n", "<leader>ff", "<cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
+keymap.set("n", "<leader>fg", "<cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
 keymap.set("n", "<leader>fs", "<cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>")
 keymap.set(
 	"n",
@@ -78,6 +79,11 @@ keymap.set(
 	"v",
 	"gcc",
 	"<cmd>call VSCodeNotifyVisual('editor.action.commentLine', { 'when': 'editorTextFocus && !editorReadonly' })<CR>"
+)
+keymap.set(
+	"n",
+	"<leader>rn",
+	"<cmd>call VSCodeNotify('editor.action.rename', { 'when': 'editorHasRenameProvider && editorTextFocus && !editorReadonly && neovim.init && neovim.mode == \"normal\"' })<CR>"
 )
 keymap.set(
 	"n",

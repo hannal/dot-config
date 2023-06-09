@@ -34,16 +34,16 @@ map <leader>tf <Action>(RerunFailedTests)
 
 " ui
 nmap <leader>eo :NERDTreeToggle<CR>
-nmap <leader>ee <Action>(ActivateProjectToolWindow)<CR>
-nmap <leader>lo <Action>(ActivateStructureToolWindow)<CR>
-nmap <leader>ldw <Action>(ActivateProblemsViewToolWindow)<CR>
-nmap <leader>bml <Action>(ActivateBookmarksToolWindow)<CR>
-map <C-h> <Action>(PrevSplitter)<CR>
-map <C-l> <Action>(NextSplitter)<CR>
+nmap <leader>ee <Action>(ActivateProjectToolWindow)
+nmap <leader>lo <Action>(ActivateStructureToolWindow)
+nmap <leader>ldw <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>bml <Action>(ActivateBookmarksToolWindow)
+map <C-h> <Action>(PrevSplitter)
+map <C-l> <Action>(NextSplitter)
 map ]t <Action>(NextTab)
 map [t <Action>(PreviousTab)
-nmap <leader>sm <Action>(MaximizeEditorInSplit)<CR>
-map <C-w>o <Action>(OpenEditorInOppositeTabGroup)<CR>
+nmap <leader>sm <Action>(MaximizeEditorInSplit)
+map <C-w>o <Action>(OpenEditorInOppositeTabGroup)
 
 " refactor
 nmap <leader>rn <Action>(RenameElement)
@@ -93,6 +93,7 @@ nmap zf <Action>(ExpandCollapseToggleAction)
 nmap zR <Action>(ExpandAllRegions)
 nmap zM <Action>(CollapseAllRegions)
 nmap zG <Action>(FoldingGroup)
+nmap <leader>vw <Action>(EditorSelectWord)
 
 " bookmark
 nmap <leader>bmv <Action>(ShowBookmarks)<CR>

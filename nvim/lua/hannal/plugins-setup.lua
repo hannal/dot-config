@@ -153,7 +153,7 @@ return packer.startup(function(use)
     use({ "asvetliakov/vim-easymotion", as = "vsc-easymotion" })
   end
 
-  use("github/copilot.vim")
+  -- use("github/copilot.vim")
 
   use({
     "akinsho/bufferline.nvim",
