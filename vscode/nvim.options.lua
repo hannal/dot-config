@@ -68,6 +68,8 @@ keymap.set(
 	"zpzp",
 	"<cmd>call VSCodeNotify('editor.action.peekDefinition', { 'when': 'editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor' })<CR>"
 )
+keymap.set("n", "zj", "o<Esc>k")
+keymap.set("n", "zk", "O<Esc>j")
 
 -- editing
 keymap.set(

@@ -1,7 +1,7 @@
 local opt = vim.opt -- for conciseness
 
 -- https://www.jmaguire.tech/posts/treesitter_folding/
-opt.foldmethod = "expr"
+-- opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.g.python3_host_prog = "~/.pyenv/versions/py4nvim/bin/python"

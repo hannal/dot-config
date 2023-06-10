@@ -51,6 +51,9 @@ keymap.set("n", "<C-w>l", ":tabs<CR>") --  tab list
 --   "/^class\\s\\|^\\s*\\(async\\s*\\)\\?*def\\s\\|^export\\s*function\\s\\|^function\\s\\|\\(public\\|private\\|protected\\)\\s*<CR>"
 -- )
 
+keymap.set("n", "zj", "o<Esc>k") --  tab list
+keymap.set("n", "zk", "O<Esc>j") --  tab list
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
