@@ -47,6 +47,7 @@ map <Space>fc :searchInCurrent
 exmap searchFile obcommand switcher:open
 map <Space>ff :searchFile
 
+" https://github.com/esm7/obsidian-vimrc-support/blob/master/JsSnippets.md
 exmap nextHeading jsfile mdHelpers.js {jumpHeading(true)}
 exmap prevHeading jsfile mdHelpers.js {jumpHeading(false)}
 nmap ]] :nextHeading
@@ -63,6 +64,15 @@ map <Space>qn :quickadd
 
 exmap fllowlink obcommand editor:follow-link
 map zgzg :fllowlink
+
+exmap togglebullet obcommand editor:toggle-bullet-list
+map <Space>bbl :togglebullet
+
+exmap togglenumberbullet obcommand editor:toggle-numbered-list
+map <Space>bnl :togglenumberbullet
+
+nmap zj o<Esc>k
+nmap zk O<Esc>j
 
 """ obcommand list
 "
@@ -317,3 +327,4 @@ map zgzg :fllowlink
 " backlink:open
 " backlink:open-backlinks
 " backlink:toggle-backlinks-in-document
+
