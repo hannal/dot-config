@@ -33,7 +33,12 @@ function jumpHeading(isForward) {
   posToSearchFrom.line += isForward ? 1 : -1;
   const cursorOffset = editor.posToOffset(posToSearchFrom);
   const lookupToUse = isForward ? regexIndexOf : regexLastIndexOf;
-  let headingOffset = lookupToUse(editor.getValue(), /^#(#*) /gm, cursorOffset);
+  // let headingOffset = lookupToUse(editor.getValue(), /^#(#*) /gm, cursorOffset);
+  let headingOffset = lookupToUse(
+    editor.getValue(),
+    /^[ \t]*(?:- )?#(#*) /gm,
+    cursorOffset
+  );
   // If not found from the cursor position, try again from the document beginning (or reverse beginning)
   if (headingOffset === -1)
     headingOffset = lookupToUse(editor.getValue(), /^#(#*) /gm);

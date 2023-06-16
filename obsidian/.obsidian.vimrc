@@ -6,57 +6,50 @@ unmap <Space>
 
 set clipboard=unnamedplus
 
-map <Esc> <C-[>
-
 map <Space>nh :nohl
-
-exmap toggleleftsidebar obcommand app:toggle-left-sidebar
-nmap <Space>eo :toggleleftsidebar
-
-exmap togglerightsidebar obcommand app:toggle-right-sidebar
-nmap <Space>ts :togglerightsidebar
 
 " exmap focusleftsidebar obcommand file-tree-alternative:open-file-tree-view
 exmap focusleftsidebar obcommand file-tree-alternative:reveal-active-file
+exmap toggleleftsidebar obcommand app:toggle-left-sidebar
+exmap togglerightsidebar obcommand app:toggle-right-sidebar
 nmap <Space>ee :focusleftsidebar
+nmap <Space>eo :toggleleftsidebar
+nmap <Space>ts :togglerightsidebar
 
 exmap back obcommand app:go-back
-nmap <C-o> :back
-
 exmap forward obcommand app:go-forward
+nmap <C-o> :back
 nmap <C-i> :forward
 
-exmap togglefold obcommand editor:toggle-fold
-nmap zf :togglefold
 " nmap zo :togglefold
 " nmap zc :togglefold
 " nmap za :togglefold
 
+exmap togglefold obcommand editor:toggle-fold
 exmap unfoldall obcommand editor:unfold-all
-nmap zR :unfoldall
-
 exmap foldall obcommand editor:fold-all
+nmap zf :togglefold
+nmap zR :unfoldall
 nmap zM :foldall
 
 exmap searchInVault obcommand omnisearch:show-modal
-map <Space>fs :searchInVault
-
 exmap searchInCurrent obcommand omnisearch:show-modal-infile
-map <Space>fc :searchInCurrent
-
 exmap searchFile obcommand switcher:open
+map <Space>fs :searchInVault
+map <Space>fc :searchInCurrent
 map <Space>ff :searchFile
 
 " https://github.com/esm7/obsidian-vimrc-support/blob/master/JsSnippets.md
-exmap nextHeading jsfile mdHelpers.js {jumpHeading(true)}
-exmap prevHeading jsfile mdHelpers.js {jumpHeading(false)}
+" exmap nextHeading jsfile mdHelpers.js {jumpHeading(true)}
+" exmap prevHeading jsfile mdHelpers.js {jumpHeading(false)}
+exmap nextHeading jsfile ../../../../../.config/obsidian/mdHelpers.js {jumpHeading(true)}
+exmap prevHeading jsfile ../../../../../.config/obsidian/mdHelpers.js {jumpHeading(false)}
 nmap ]] :nextHeading
 nmap [[ :prevHeading
 
 exmap nexttab obcommand workspace:next-tab
-map ]t :nexttab
-
 exmap prevtab obcommand workspace:previous-tab
+map ]t :nexttab
 map [t :prevtab
 
 exmap quickadd obcommand quickadd:runQuickAdd
@@ -66,13 +59,17 @@ exmap fllowlink obcommand editor:follow-link
 map zgzg :fllowlink
 
 exmap togglebullet obcommand editor:toggle-bullet-list
-map <Space>bbl :togglebullet
-
 exmap togglenumberbullet obcommand editor:toggle-numbered-list
+map <Space>bbl :togglebullet
 map <Space>bnl :togglenumberbullet
 
 nmap zj o<Esc>k
 nmap zk O<Esc>j
+
+exmap focusLeftEditor obcommand editor:focus-left
+exmap focusRightEditor obcommand editor:focus-right
+map <C-h> :focusLeftEditor
+map <C-l> :focusRightEditor
 
 """ obcommand list
 "
