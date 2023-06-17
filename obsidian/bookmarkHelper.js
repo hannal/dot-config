@@ -4,13 +4,23 @@ function jumpToBookmark({ index, title }) {
   }
 
   (async () => {
-    const result = await app.vault.readConfigJson("bookmarks");
-    const item = result.find(
+    const { items } = await app.vault.readConfigJson("bookmarks");
+    console.log("bookmark", items);
+    const item = items?.find(
       (v, i) =>
         (index !== undefined && i === index) ||
         (title !== undefined && v.title === title)
     );
+    console.log("bookmark exists?", !!item);
 
-    !!item && app.workspace.openLinkText(item.title, item.path);
+    if (item) {
+      const { name, path } = splitNoteName(item);
+      app.workspace.openLinkText(name, path, false);
+    }
   })();
+}
+
+function splitNoteName({ path }) {
+  const [_, ...parts] = path.split("/").last().split(".").reverse();
+  return { name: parts.reverse().join("."), path };
 }
