@@ -71,6 +71,23 @@ exmap focusRightEditor obcommand editor:focus-right
 map <C-h> :focusLeftEditor
 map <C-l> :focusRightEditor
 
+exmap openBookmark1 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 0 })}
+exmap openBookmark2 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 1 })}
+exmap openBookmark3 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 2 })}
+exmap openBookmark4 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 3 })}
+exmap openBookmark5 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 4 })}
+map <Space>b1 :openBookmark1
+map <Space>b2 :openBookmark2
+map <Space>b3 :openBookmark3
+map <Space>b4 :openBookmark4
+map <Space>b5 :openBookmark5
+
+exmap splitVertical obcommand workspace:split-vertical
+map <C-w>v :splitVertical
+
+exmap rename obcommand file-explorer:move-file
+map <Space>rn :rename
+
 """ obcommand list
 "
 " editor:save-file
