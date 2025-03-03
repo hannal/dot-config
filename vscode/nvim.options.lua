@@ -75,12 +75,12 @@ keymap.set("n", "zk", "O<Esc>j")
 keymap.set(
 	"n",
 	"gcc",
-	"<cmd>call VSCodeNotifyVisual('editor.action.commentLine', { 'when': 'editorTextFocus && !editorReadonly' })<CR>"
+	"<cmd>call VSCodeNotify('editor.action.commentLine', { 'when': 'editorTextFocus && !editorReadonly' })<CR>"
 )
 keymap.set(
 	"v",
 	"gcc",
-	"<cmd>call VSCodeNotifyVisual('editor.action.commentLine', { 'when': 'editorTextFocus && !editorReadonly' })<CR>"
+	"<cmd>call VSCodeNotify('editor.action.commentLine', { 'when': 'editorTextFocus && !editorReadonly' })<CR>"
 )
 keymap.set(
 	"n",

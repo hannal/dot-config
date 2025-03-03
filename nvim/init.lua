@@ -1,32 +1,21 @@
--- ref : https://github.com/josean-dev/dev-environment-files
-require("hannal.core.utils")
-if not is_vscode() then
-  require("hannal.core.options")
-  require("hannal.core.keymaps")
-  require("hannal.plugins-setup")
-  require("hannal.plugins.comment")
-  require("hannal.core.colorscheme")
-  require("hannal.plugins.nvim-tree")
-  require("hannal.plugins.neodev")
-  require("hannal.plugins.gitsigns")
-  require("hannal.plugins.treesitter")
-  require("hannal.plugins.lsp.mason")
-  require("hannal.plugins.lsp.lspsaga")
-  require("hannal.plugins.lsp.lspconfig")
-  require("hannal.plugins.lsp.null-ls")
-  require("hannal.plugins.neotest")
-  require("hannal.plugins.lualine")
-  require("hannal.plugins.telescope.command-center")
-  require("hannal.plugins.telescope")
-  require("hannal.plugins.nvim-cmp")
-  require("hannal.plugins.autopairs")
-  require("hannal.plugins.neogit")
-  require("hannal.plugins.diffview")
-  require("hannal.plugins.indent-blankline")
-  require("hannal.plugins.nvim-dap")
-  -- require("hannal.plugins.dart-vim")
-  require("hannal.plugins.scope")
-  require("hannal.plugins.bufferline")
-  require("hannal.plugins.copilot")
-  require("hannal.plugins.fold-preview")
+require "core"
+
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
+
+if custom_init_path then
+  dofile(custom_init_path)
 end
+
+require("core.utils").load_mappings()
+
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
+
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"

@@ -71,11 +71,16 @@ exmap focusRightEditor obcommand editor:focus-right
 map <C-h> :focusLeftEditor
 map <C-l> :focusRightEditor
 
+exmap bookmarklist obcommand bookmarks:open
+exmap bookmark-current-view obcommand bookmarks:bookmark-current-view
 exmap openBookmark1 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 0 })}
 exmap openBookmark2 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 1 })}
 exmap openBookmark3 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 2 })}
 exmap openBookmark4 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 3 })}
 exmap openBookmark5 jsfile ../../../../../.config/obsidian/bookmarkHelper.js {jumpToBookmark({ index: 4 })}
+
+map <Space>bl :bookmarklist
+map <Space>bm :bookmark-current-view
 map <Space>b1 :openBookmark1
 map <Space>b2 :openBookmark2
 map <Space>b3 :openBookmark3
